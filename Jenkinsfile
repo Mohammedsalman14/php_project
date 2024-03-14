@@ -18,10 +18,10 @@ pipeline {
             steps {
                 // Example: deploy Docker image to EC2 instance
                 script {
-                    def docker = " docker pull salman14/php_project:1.3 "
+                    def dockerCmd = " docker pull salman14/php_project:1.3 "
                     // Example: SSH to EC2 instance and deploy Docker container
                     sshagent(['ec2-docker-deploy']) {
-                        sh " ssh -o StrictHostKeyChecking=no ec2-user@your-ec2-instance ${docker}"
+                        sh " ssh -o StrictHostKeyChecking=no ec2-user@54.226.20.7 ${dockerCmd}"
                     }
                 }
             }
