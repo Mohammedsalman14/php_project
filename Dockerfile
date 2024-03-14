@@ -5,7 +5,7 @@ FROM php:7.4-apache
 WORKDIR /var/www/html
 
 # Install system dependencies
-RUN apt-get update && apt upgrade && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt upgrade -y && apt-get install -y --no-install-recommends \
     git \
     unzip \
     && rm -rf /var/lib/apt/lists/*
