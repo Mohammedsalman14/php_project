@@ -1,11 +1,11 @@
-# Use the official PHP image as base
+# Use an official PHP image as base
 FROM php:7.4-apache
 
 # Set working directory inside the container
 WORKDIR /var/www/html
 
 # Install system dependencies
-RUN apt-get update && apt upgrade -y && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     unzip \
     && rm -rf /var/lib/apt/lists/*
