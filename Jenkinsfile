@@ -18,7 +18,7 @@ pipeline {
             steps {
                 // Example: deploy Docker image to EC2 instance
                 script {
-                    def dockerComposeCmd = "docker-compose -f docker-compose.yaml -up --detach"
+                    def dockerComposeCmd = "docker-compose -f docker-compose.yaml up --detach"
                      // Example: SSH to EC2 instance and deploy Docker container
                     sshagent(['ec2-docker-deploy']) {
                         sh "scp docker-compose.yaml ubuntu@54.226.20.7:/home/ubuntu"
